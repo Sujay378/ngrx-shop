@@ -1,0 +1,11 @@
+<div
+  class="h-[200px] w-full p-2.5 text-center hover:bg-slate-100 hover:shadow-md"
+>
+  <div class="mb-2 flex h-[80px] w-full justify-center">
+    <img [src]="product.thumbnail" class="h-[75px] object-contain" />
+  </div>
+  <h2 class="text-sm font-bold">{{ product.company | uppercase }}</h2>
+  <h3 class="text-sm font-semibold">{{ product.title | titlecase }}</h3>
+  <app-ratings [rating]="product.rating"></app-ratings>
+  <p class="text-xs font-semibold">{{ product.price | currency: "INR" }}</p>
+</div>

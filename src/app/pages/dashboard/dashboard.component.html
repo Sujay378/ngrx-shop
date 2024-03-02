@@ -1,0 +1,66 @@
+<div class="flex h-full flex-col gap-3">
+  <div class="flex items-center justify-between">
+    <h2 class="block text-2xl font-bold">Browse Our Products</h2>
+    <div class="action-container flex items-center gap-3">
+      <div class="search-bar min-w-24">
+        <app-input
+          id="search_query"
+          placeholder="Search for products"
+        ></app-input>
+      </div>
+      <div class="filter-button">
+        <app-button
+          [type]="btnTypes.ROUNDED"
+          text="Filter"
+          id="filter-button"
+          classList="py-"
+        ></app-button>
+      </div>
+    </div>
+  </div>
+  <div class="products-container flex-grow">
+    <app-bubble-wrapper>
+      <div class="flex w-full flex-wrap">
+        <div class="w-1/5 p-2.5">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="w-1/5 p-2.5">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="w-1/5 p-2.5">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="w-1/5 p-2.5">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="w-1/5 p-2.5">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="w-1/5 p-2.5">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="w-1/5 p-2.5">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="w-1/5 p-2.5">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="w-1/5 p-2.5">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="w-1/5 p-2.5">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="w-1/5 p-2.5">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="w-1/5 p-2.5">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="w-1/5 p-2.5">
+          <app-product-card></app-product-card>
+        </div>
+      </div>
+    </app-bubble-wrapper>
+  </div>
+</div>

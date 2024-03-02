@@ -1,0 +1,10 @@
+<footer
+  class="mt-2.5 flex items-center gap-4 border-t-2 border-slate-400 bg-white px-4 py-2"
+>
+  <h3 class="text-xl">NGRX Shop</h3>
+  <ul class="flex list-none items-center gap-2">
+    <li *ngFor="let link of links" class="cursor-pointer">
+      <a [href]="link.href" target="_blank">{{ link.label }}</a>
+    </li>
+  </ul>
+</footer>

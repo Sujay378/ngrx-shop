@@ -1,0 +1,14 @@
+<div class="w-full" [formGroup]="parentForm">
+  <label [for]="id" *ngIf="label">{{ label }}</label>
+  <input
+    type="text"
+    [id]="id"
+    [placeholder]="placeholder"
+    class="w-full rounded-full border-[1px] border-stone-900 px-4 py-1 text-center text-base outline-none ring-black ring-offset-2 ring-offset-white placeholder:text-center placeholder:text-stone-400 focus:ring-1"
+    [formControl]="formControl"
+    [formControlName]="formControlName"
+    (change)="onChange($event)"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+  />
+</div>

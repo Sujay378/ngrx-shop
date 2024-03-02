@@ -1,0 +1,31 @@
+<div class="p-2">
+  <header
+    class="flex w-full items-center justify-between rounded-md bg-white px-4 py-4 shadow-lg"
+  >
+    <div class="flex items-end gap-3">
+      <h1 class="cursor-pointer text-2xl" routerLink="/dashboard">NGRX Shop</h1>
+      <nav>
+        <ul class="flex list-none gap-3">
+          <li
+            *ngFor="let nav of navlinks"
+            class="flex cursor-pointer items-center space-x-2 text-slate-900"
+            [routerLink]="nav.link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <ng-icon *ngIf="nav.icon" [svg]="nav.icon"></ng-icon>
+            {{ nav.label }}
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="flex items-center gap-2">
+      <p>Hi Greeshma</p>
+      <div
+        class="h-10 w-10 overflow-hidden rounded-full border-[5px] border-slate-100 bg-slate-500"
+      >
+        <img src="assets/images/default-profile.jpg" class="object-contain" />
+      </div>
+    </div>
+  </header>
+</div>
