@@ -12,6 +12,7 @@ import { OrdersComponent } from './pages/orders/orders.component';
 import { ProductCardComponent } from './pages/dashboard/product-card/product-card.component';
 import { LibraryModule } from './lib/library.module';
 import { NgIconsModule } from '@ng-icons/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { NgIconsModule } from '@ng-icons/core';
     SharedModule,
     LibraryModule,
     NgIconsModule.withIcons({}),
+    HttpClientModule,
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

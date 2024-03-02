@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { SingleProduct } from '../../../shared/models/product.model';
 
 @Component({
   selector: 'app-product-card',
@@ -6,19 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './product-card.component.scss',
 })
 export class ProductCardComponent {
-  @Input() product: {
-    thumbnail: string;
-    company: string;
-    title: string;
-    rating: number;
-    description: string;
-    price: number;
-  } = {
-    thumbnail: '/assets/images/product.jpg',
-    company: 'Apple',
-    title: 'Iphone Naam shuna nahi to mar ja',
-    rating: 3.5,
-    description: 'Bacha hi kya hein descride karneko jante hi hogey tum',
-    price: 100000,
-  };
+  @Input({required:true}) product!: SingleProduct;
 }

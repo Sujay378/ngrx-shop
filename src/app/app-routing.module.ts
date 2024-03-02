@@ -4,6 +4,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { productResolver } from './core/guards/product.resolver';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    resolve: { products: productResolver },
   },
   {
     path: 'orders',
