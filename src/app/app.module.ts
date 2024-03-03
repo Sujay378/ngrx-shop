@@ -14,6 +14,7 @@ import { LibraryModule } from './lib/library.module';
 import { NgIconsModule } from '@ng-icons/core';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { LoginComponent } from './pages/login/login.component';
     LibraryModule,
     NgIconsModule.withIcons({}),
     HttpClientModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
