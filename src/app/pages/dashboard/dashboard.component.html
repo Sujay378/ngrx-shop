@@ -10,10 +10,9 @@
       </div>
       <div class="filter-button">
         <app-button
-          [type]="btnTypes.ROUNDED"
+          type="rounded"
           text="Filter"
           id="filter-button"
-          classList="py-"
         ></app-button>
       </div>
     </div>
@@ -21,7 +20,10 @@
   <div class="products-container flex-grow">
     <app-bubble-wrapper>
       <div class="flex w-full flex-wrap">
-        <div class="w-1/5 p-2.5" *ngFor="let product of productsObservable$|async">
+        <div
+          class="w-1/5 p-2.5"
+          *ngFor="let product of productsObservable$ | async"
+        >
           <app-product-card [product]="product"></app-product-card>
         </div>
       </div>

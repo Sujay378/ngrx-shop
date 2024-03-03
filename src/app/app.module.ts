@@ -13,6 +13,7 @@ import { ProductCardComponent } from './pages/dashboard/product-card/product-car
 import { LibraryModule } from './lib/library.module';
 import { NgIconsModule } from '@ng-icons/core';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     CartComponent,
     OrdersComponent,
     ProductCardComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

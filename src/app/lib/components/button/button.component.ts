@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { BtnTypes } from '../../enums/button';
+import { BtnTypes } from '../../models/button.type';
 
 @Component({
   selector: 'app-button',
@@ -8,32 +8,33 @@ import { BtnTypes } from '../../enums/button';
 })
 export class ButtonComponent implements OnInit {
   @Input() id: string = '';
-  @Input() type: BtnTypes = BtnTypes.PRIMARY;
+  @Input() type: BtnTypes = 'primary';
   @Input() text: string = '';
   @Input() classList: string = '';
 
   @Output() buttonClicked = new EventEmitter<Event>();
   @Output() buttonPressed = new EventEmitter<Event>();
 
-  primarySet: string = '';
   classNames: string = '';
 
   ngOnInit(): void {
     switch (this.type) {
-      case BtnTypes.PRIMARY:
+      case 'primary':
         this.classNames =
-          'w-full rounded-xl bg-blue-800 px-4 py-1 text-center ' +
+          'w-full rounded-xl bg-blue-800 px-4 py-1 text-center text-white hover:bg-blue-500 ' +
           this.classList;
         break;
-      case BtnTypes.SECONDARY:
-        this.classNames = '' + this.classList;
-        break;
-      case BtnTypes.ROUNDED:
+      case 'secondary':
         this.classNames =
-          'w-full rounded-full bg-blue-800 px-4 py-1 text-center ' +
+          'w-full rounded-xl border-2 border-blue-800 bg-white px-4 py-1 text-center text-blue-800 hover:bg-blue-800 hover:text-white ' +
           this.classList;
         break;
-      case BtnTypes.GOBACK:
+      case 'rounded':
+        this.classNames =
+          'w-full rounded-full bg-blue-800 px-4 py-1 text-center text-white hover:bg-blue-500 ' +
+          this.classList;
+        break;
+      case 'goback':
         this.classNames = '' + this.classList;
         break;
       default:

@@ -5,6 +5,7 @@ import { OrdersComponent } from './pages/orders/orders.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { productResolver } from './core/guards/product.resolver';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
 ];
 
