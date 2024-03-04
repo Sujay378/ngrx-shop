@@ -3,6 +3,7 @@ import { ProductService } from '../../core/services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { SingleProduct } from '../../shared/models/product.model';
 import { Observable, map } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,6 +12,7 @@ import { Observable, map } from 'rxjs';
 })
 export class DashboardComponent {
   productsObservable$: Observable<SingleProduct[]>;
+  form = new FormGroup({});
   constructor(
     private productServ: ProductService,
     private activatedRoute: ActivatedRoute,

@@ -1,4 +1,4 @@
-<div class="w-full space-y-1" [formGroup]="parentForm">
+<form class="w-full space-y-1" [formGroup]="parentForm">
   <label [for]="id" class="text-base font-semibold" *ngIf="label">{{
     label
   }}</label>
@@ -7,10 +7,9 @@
     [id]="id"
     [placeholder]="placeholder"
     [ngClass]="classList"
-    [formControl]="formControl"
     [formControlName]="formControlName"
     (change)="onChange($event)"
     (focus)="onFocus($event)"
     (blur)="onBlur($event)"
   />
-</div>
+</form>

@@ -1,5 +1,6 @@
-
-<div class="min-w-[250px] max-w-[250px] space-y-4 rounded-sm bg-white p-5 shadow-lg">
+<div
+  class="min-w-[250px] max-w-[250px] space-y-4 rounded-sm bg-white p-5 shadow-lg"
+>
   <div class="header">
     <h2 class="text-center text-2xl font-bold text-black">Login</h2>
   </div>
@@ -7,7 +8,6 @@
     <div class="form-control">
       <app-input
         id="username"
-        formControlName="username"
         label="Username"
         type="form-control"
         placeholder="Type your username here"
@@ -17,7 +17,6 @@
     <div class="form-control">
       <app-input
         id="password"
-        formControlName="password"
         label="Password"
         type="form-control"
         placeholder="Type your password here"
@@ -26,6 +25,10 @@
     </div>
   </div>
   <div class="actions w-full">
-    <app-button type="primary" text="Login" (buttonClicked)="onSubmit()"></app-button>
+    <app-button
+      type="primary"
+      text="Login"
+      (buttonClicked)="onSubmit()"
+    ></app-button>
   </div>
 </div>
