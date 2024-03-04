@@ -3,7 +3,7 @@
     label
   }}</label>
   <input
-    type="text"
+    [type]="masked ? 'password' : 'text'"
     [id]="id"
     [placeholder]="placeholder"
     [ngClass]="classList"

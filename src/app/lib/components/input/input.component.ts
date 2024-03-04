@@ -16,6 +16,7 @@ export class InputComponent implements OnInit {
   @Input() placeholder: string = '';
   @Input({ required: true }) parentForm!: FormGroup;
   @Input() formControlName: string = '';
+  @Input() masked: boolean = false;
 
   @Output() controlReady = new EventEmitter<ControlEvent>();
   @Output() changeEvent = new EventEmitter<InputEvent>();

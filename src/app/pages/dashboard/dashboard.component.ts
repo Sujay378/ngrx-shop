@@ -3,7 +3,7 @@ import { ProductService } from '../../core/services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { SingleProduct } from '../../shared/models/product.model';
 import { Observable, map } from 'rxjs';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +12,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class DashboardComponent {
   productsObservable$: Observable<SingleProduct[]>;
-  form = new FormGroup({});
+  form = new FormGroup({ search_query: new FormControl('') });
   constructor(
     private productServ: ProductService,
     private activatedRoute: ActivatedRoute,
