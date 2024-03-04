@@ -19,14 +19,9 @@ export class ButtonComponent implements OnInit {
 
   ngOnInit(): void {
     switch (this.type) {
-      case 'primary':
-        this.classNames =
-          'w-full rounded-xl bg-blue-800 px-4 py-1 text-center text-white hover:bg-blue-500 ' +
-          this.classList;
-        break;
       case 'secondary':
         this.classNames =
-          'w-full rounded-xl border-2 border-blue-800 bg-white px-4 py-1 text-center text-blue-800 hover:bg-blue-800 hover:text-white ' +
+          'w-full rounded-md border-2 border-blue-800 bg-white px-4 py-1 text-center text-blue-800 hover:bg-blue-800 hover:text-white ' +
           this.classList;
         break;
       case 'rounded':
@@ -38,7 +33,9 @@ export class ButtonComponent implements OnInit {
         this.classNames = '' + this.classList;
         break;
       default:
-        this.classNames = '' + this.classList;
+        this.classNames =
+          'w-full rounded-md bg-blue-800 px-4 py-1 text-center text-white hover:bg-blue-500 ' +
+          this.classList;
     }
   }
 

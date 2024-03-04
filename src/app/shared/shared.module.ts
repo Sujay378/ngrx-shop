@@ -6,6 +6,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { LibraryModule } from '../lib/library.module';
 import { BubbleWrapperComponent } from './components/bubble-wrapper/bubble-wrapper.component';
 import { NgIconsModule } from '@ng-icons/core';
+import { heroArrowLongRight } from '@ng-icons/heroicons/outline';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, BubbleWrapperComponent],
@@ -13,7 +14,7 @@ import { NgIconsModule } from '@ng-icons/core';
     CommonModule,
     AppRoutingModule,
     LibraryModule,
-    NgIconsModule.withIcons({}),
+    NgIconsModule.withIcons({ heroArrowLongRight }),
   ],
   exports: [HeaderComponent, FooterComponent, BubbleWrapperComponent],
 })

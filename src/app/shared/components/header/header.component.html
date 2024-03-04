@@ -19,12 +19,25 @@
         </ul>
       </nav>
     </div>
-    <div class="flex items-center gap-2">
+    <div class="relative flex items-center gap-2">
       <p>Hi Greeshma</p>
       <div
         class="h-10 w-10 overflow-hidden rounded-full border-[5px] border-slate-100 bg-slate-500"
+        (mouseover)="onMouseover()"
+        (mouseout)="onMouseout()"
       >
         <img src="assets/images/default-profile.jpg" class="object-contain" />
+      </div>
+      <div
+        (mouseover)="onMouseover()"
+        (mouseout)="onMouseout()"
+        *ngIf="showControl"
+        class="absolute right-0 top-[60px] w-40 bg-white p-2 text-base font-semibold shadow-md"
+      >
+        <div class="flex items-center justify-between hover:bg-slate-100">
+          <p class="text-stone-900" (click)="logout()">Logout</p>
+          <ng-icon name="heroArrowLongRight"></ng-icon>
+        </div>
       </div>
     </div>
   </header>
