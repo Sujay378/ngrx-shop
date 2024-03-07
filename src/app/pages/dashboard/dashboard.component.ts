@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
-import { ProductService } from '../../core/services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { SingleProduct } from '../../shared/models/product.model';
-import { Observable, map } from 'rxjs';
-import { FormControl, FormGroup } from '@angular/forms';
+import {
+  Observable,
+  debounceTime,
+  distinctUntilChanged,
+  map,
+  of,
+  switchMap,
+} from 'rxjs';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,11 +18,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class DashboardComponent {
   productsObservable$: Observable<SingleProduct[]>;
-  form = new FormGroup({ search_query: new FormControl('') });
-  constructor(
-    private productServ: ProductService,
-    private activatedRoute: ActivatedRoute,
-  ) {
+  control = new FormControl('');
+
+  constructor(private activatedRoute: ActivatedRoute) {
     this.productsObservable$ = this.activatedRoute.data.pipe(
       map((data) => data['products']),
     );

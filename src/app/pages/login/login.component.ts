@@ -10,6 +10,7 @@ export class LoginComponent {
   loginForm = new FormGroup({
     username: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
+    remember: new FormControl('', Validators.required),
   });
 
   onSubmit() {

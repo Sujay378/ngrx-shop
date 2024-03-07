@@ -21,8 +21,16 @@
         type="form-control"
         placeholder="Type your password here"
         [parentForm]="loginForm"
-        [masked]="true"
+        [masked]="false"
       ></app-input>
+    </div>
+    <div class="form-control flex justify-center">
+      <app-checkbox
+        id="remember-me"
+        label="Remember me"
+        formControlName="remember"
+        [parentForm]="loginForm"
+      ></app-checkbox>
     </div>
   </div>
   <div class="actions w-full">

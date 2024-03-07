@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ControlEvent, InputEvent } from '../../models/input.type';
 
 export type InputTypes = 'form-control' | 'rounded-control';
@@ -14,7 +14,8 @@ export class InputComponent implements OnInit {
   @Input({ required: true }) id!: string;
   @Input() label: string = '';
   @Input() placeholder: string = '';
-  @Input({ required: true }) parentForm!: FormGroup;
+  @Input() parentForm: FormGroup = new FormGroup({});
+  @Input() formControl: FormControl = new FormControl('');
   @Input() formControlName: string = '';
   @Input() masked: boolean = false;
 
@@ -27,6 +28,8 @@ export class InputComponent implements OnInit {
 
   ngOnInit(): void {
     this.formControlName = this.formControlName || this.id;
+    if (!this.parentForm.contains(this.formControlName))
+      this.parentForm.addControl(this.formControlName, this.formControl);
 
     switch (this.type) {
       case 'form-control':

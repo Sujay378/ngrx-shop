@@ -1,40 +1,28 @@
+import { Component, Input } from '@angular/core';
 import {
-  AfterViewInit,
-  CUSTOM_ELEMENTS_SCHEMA,
-  Component,
-  Input,
-  OnInit,
-} from '@angular/core';
-
-enum Fills {
-  yellow = '#yellow',
-  partial = '#partial',
-  white = '#white',
-}
+  starRatingColor,
+  starRatingLabelPosition,
+  starRatingSizes,
+  starRatingStarTypes,
+} from 'angular-star-rating/lib/interfaces/star-rating-config.interface';
 
 @Component({
   selector: 'app-ratings',
   templateUrl: './ratings.component.html',
   styleUrl: './ratings.component.scss',
 })
-export class RatingsComponent implements OnInit {
-  @Input() rating: number = 0;
+export class RatingsComponent {
+  @Input() starType: starRatingStarTypes = 'svg';
+  @Input({ required: true }) rating: number = 0;
   @Input() max: number = 5;
-  stars: string[] = [];
-
-  ngOnInit(): void {
-    const absolutePortion = Math.floor(this.rating);
-
-    Array.from({ length: absolutePortion }, () =>
-      this.stars.push(Fills.yellow),
-    );
-
-    if (absolutePortion === this.max) return;
-
-    if (this.rating - absolutePortion !== 0) this.stars.push(Fills.partial);
-
-    Array.from({ length: this.max - this.stars.length }, () =>
-      this.stars.push(Fills.white),
-    );
-  }
+  @Input() editable: boolean = false;
+  @Input() step: number = 1;
+  @Input() showHalfStars: boolean = true;
+  @Input() staticColor: starRatingColor = 'ok';
+  @Input() labelPosition: starRatingLabelPosition = 'left';
+  @Input() hoverEnabled: boolean = false;
+  @Input() labelVisible: boolean = true;
+  @Input() size: starRatingSizes = 'medium';
+  @Input() disabled: boolean = false;
+  getHalfStarVisible = (rating: number) => true;
 }
